@@ -3,31 +3,31 @@ import mongoose from "mongoose";
 const roomSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: [ture, "Please enter room name"],
+    required: [true, "Please enter room name"],
     trim: true,
     maxLength: [100, "room name cant exceed 100 characters"],
   },
-  name: {
+  price: {
     type: Number,
-    required: [ture, "Please enter room price"],
+    required: [true, "Please enter room price"],
     maxLength: [5, "room price cant exceed 5 characters"],
     default: 0.0,
   },
-  desciprtion: {
+  description: {
     type: String,
-    required: [ture, "Please enter room description"],
+    required: [true, "Please enter room description"],
   },
   adress: {
     type: String,
-    required: [ture, "Please enter room adress"],
+    required: [true, "Please enter room adress"],
   },
   guestCapacity: {
     type: Number,
-    required: [ture, "Please enter guest Capacity"],
+    required: [true, "Please enter guest Capacity"],
   },
   numOfBeds: {
     type: Number,
-    required: [ture, "Please enter number beds in room"],
+    required: [true, "Please enter number beds in room"],
   },
   internet: {
     type: Boolean,
@@ -101,6 +101,7 @@ const roomSchema = new mongoose.Schema({
   user: {
     type: mongoose.Schema.ObjectId,
     ref: "User",
+    required: false,
   },
   createdAt: {
     type: Date,
